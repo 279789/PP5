@@ -393,7 +393,43 @@ philr@3245-Laptop:~/Programieren/repos/PP5_clone/myproject$
 ```bash
 # Paste here the remote‐adding & push outputs
 Github:
+philr@3245-Laptop:~/Programieren/repos$ mkdir myproject-gh
+philr@3245-Laptop:~/Programieren/repos$ cd myproject-gh
+philr@3245-Laptop:~/Programieren/repos/myproject-gh$ git init
+Initialized empty Git repository in /home/philr/Programieren/repos/myproject-gh/.git/
+philr@3245-Laptop:~/Programieren/repos/myproject-gh$ git remote add github github.com:279789/myproject-gh.git
+philr@3245-Laptop:~/Programieren/repos/myproject-gh$ vim github.txt
+philr@3245-Laptop:~/Programieren/repos/myproject-gh$ git add github.txt
+philr@3245-Laptop:~/Programieren/repos/myproject-gh$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   github.txt
+
+philr@3245-Laptop:~/Programieren/repos/myproject-gh$ git commit -m "Github test"
+[master (root-commit) d6cd4b6] Github test
+ 1 file changed, 1 insertion(+)
+ create mode 100644 github.txt
+philr@3245-Laptop:~/Programieren/repos/myproject-gh$ git push -u github master
+Enter passphrase for key '/home/philr/.ssh/Githubkey':
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 228 bytes | 228.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/279789/myproject-gh/pull/new/master
+remote:
+To github.com:279789/myproject-gh.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'github/master'.
+philr@3245-Laptop:~/Programieren/repos/myproject-gh$
+
 Gitlab:
+
 philr@3245-Laptop:~$ cd .ssh
 philr@3245-Laptop:~/.ssh$ ls
 Aspire  Aspire.pub  Githubkey  Githubkey.pub  config  known_hosts  known_hosts.old  user12  user12.pub
