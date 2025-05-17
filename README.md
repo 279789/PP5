@@ -538,7 +538,7 @@ philr@3245-Laptop:~/Programieren/repos/myproject-gl$
 
 * GitHub PR: [*paste URL and a one-sentence summary*]https://github.com/279789/PP5/pull/1 Worked finaly, but forgot that I also have to "remote add " the og repo for my branch
 * 
-* GitLab MR: *paste URL and a one-sentence summary*
+* GitLab MR: *paste URL and a one-sentence summary* https://gitlab.thga.de/279789/myproject-gl/-/merge_requests/1 I always feel like a idiot, because I always press wrong adresses or forget my aliases. But worked out finaly.
 
 ---
 
