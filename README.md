@@ -278,6 +278,98 @@ philr@3245-Laptop:~/Programieren/repos/PP5$
 
 ```bash
 # Paste here the push & clone commands and outputs
+philr@3245-Laptop:~/Programieren/repos/PP5$ ssh Vorlesung
+ -p ~/repos/myproject.git && cd ~/repos/myproject.git && git init --bare"^[[201~Linux vorlesung 6.1.0-21-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.90-1 (2024-05-03) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sat May 17 08:37:33 2025 from 91.32.49.226
+  "mkdir -p ~/repos/myproject.git && cd ~/repos/myproject.git && git init --bare"^[[201~user12@vorlesung:~$   "mkdir -p ~/repos/myproject.git && cd ~/repos/myproject.git && git init --bare"~^C
+user12@vorlesung:~$ cd
+user12@vorlesung:~$ ls
+user12@vorlesung:~$ mkdir -p ~/repos/myproject.git && cd ~/repos/myproject.git && git init --bare
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/user12/repos/myproject.git/
+user12@vorlesung:~/repos/myproject.git$ exit
+logout
+Connection to 128.140.85.215 closed.
+philr@3245-Laptop:~/Programieren/repos/PP5$ git remote add origin-ssh Vorlesung:~/repos/myproject.git
+philr@3245-Laptop:~/Programieren/repos/PP5$ ls
+feature.txt  sens.txt
+philr@3245-Laptop:~/Programieren/repos/PP5$ git log
+commit b900b9d356d06a10aada3655412a92a1f4ae4101 (HEAD -> master, feature-1)
+Author: Filz <phil.reinartz@gmx.de>
+Date:   Sat May 17 10:48:57 2025 +0200
+
+    feature commit
+
+commit 7814dc9139a3683e72cf8d0fa8f07e3fdbe55849
+Author: Filz <phil.reinartz@gmx.de>
+Date:   Sat May 17 10:45:13 2025 +0200
+
+    Test
+philr@3245-Laptop:~/Programieren/repos/PP5$ git switch master
+Already on 'master'
+philr@3245-Laptop:~/Programieren/repos/PP5$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin-ssh master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+philr@3245-Laptop:~/Programieren/repos/PP5$ git push -u origin-ssh master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 570 bytes | 570.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To Vorlesung:~/repos/myproject.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin-ssh/master'.
+philr@3245-Laptop:~/Programieren/repos/PP5$ cd ..
+philr@3245-Laptop:~/Programieren/repos$ mkdir PP5_clone && cd PP5_clone
+philr@3245-Laptop:~/Programieren/repos/PP5_clone$ git clone Vorlesung:~/repos/myproject
+Cloning into 'myproject'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+philr@3245-Laptop:~/Programieren/repos/PP5_clone$ git log
+fatal: not a git repository (or any of the parent directories): .git
+philr@3245-Laptop:~/Programieren/repos/PP5_clone$ git init
+Initialized empty Git repository in /home/philr/Programieren/repos/PP5_clone/.git/
+philr@3245-Laptop:~/Programieren/repos/PP5_clone$ git log
+fatal: your current branch 'master' does not have any commits yet
+philr@3245-Laptop:~/Programieren/repos/PP5_clone$ git clone Vorlesung:~/repos/myproject
+fatal: destination path 'myproject' already exists and is not an empty directory.
+philr@3245-Laptop:~/Programieren/repos/PP5_clone$ ls
+myproject
+philr@3245-Laptop:~/Programieren/repos/PP5_clone$ git myproject
+git: 'myproject' is not a git command. See 'git --help'.
+philr@3245-Laptop:~/Programieren/repos/PP5_clone$ ls
+myproject
+philr@3245-Laptop:~/Programieren/repos/PP5_clone$ cd myproject
+philr@3245-Laptop:~/Programieren/repos/PP5_clone/myproject$ ls
+feature.txt  sens.txt
+philr@3245-Laptop:~/Programieren/repos/PP5_clone/myproject$
+
 ```
 
 ---
