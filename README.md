@@ -8,6 +8,7 @@ In this exercise you will:
 * Set up and interact with a **bare** Git repository on an SSH‐accessible server (e.g. **vorlesungsserver**, or any machine you have SSH access to).
 * Push and pull to/from **GitHub** and the **THGA GitLab** server.
 * Practice **forking** an existing repo, making changes, and submitting a **Pull Request** (on GitHub) or **Merge Request** (on GitLab).
+* Have fun
 
 **Important:** Start a stopwatch when you begin and work uninterruptedly for **90 minutes**. Once time is up, stop immediately and document exactly where you had to pause.
 
