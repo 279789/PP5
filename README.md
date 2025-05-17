@@ -392,6 +392,101 @@ philr@3245-Laptop:~/Programieren/repos/PP5_clone/myproject$
 
 ```bash
 # Paste here the remote‐adding & push outputs
+Github:
+Gitlab:
+philr@3245-Laptop:~$ cd .ssh
+philr@3245-Laptop:~/.ssh$ ls
+Aspire  Aspire.pub  Githubkey  Githubkey.pub  config  known_hosts  known_hosts.old  user12  user12.pub
+philr@3245-Laptop:~/.ssh$ ssh-keygen -t ed25519 -f THGA_Gitlab -C "Gitlab Server Thga"
+Generating public/private ed25519 key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in THGA_Gitlab
+Your public key has been saved in THGA_Gitlab.pub
+The key fingerprint is:
+SHA256:ua+lzBpSqdbZ/yriOWRb5pQcTNT/pCGmAVaMh3C6ymQ Gitlab Server Thga
+The key's randomart image is:
++--[ED25519 256]--+
+|    ...*o.       |
+|     o= + .      |
+|    .. =   .     |
+|     . .+.o o .  |
+|  E . o.S* . =   |
+| + . +ooB.  . .  |
+|  o +o+*o .      |
+|   . .+=o=       |
+|     .++=o+o.    |
++----[SHA256]-----+
+philr@3245-Laptop:~/.ssh$ vim THGA_Gitlab.pub
+philr@3245-Laptop:~/.ssh$ cd
+philr@3245-Laptop:~$ cd .ssh
+philr@3245-Laptop:~/.ssh$ ls -la
+total 52
+drwx------  2 philr philr 4096 May 17 15:09 .
+drwxr-x--- 13 philr philr 4096 May 17 15:09 ..
+-rw-------  1 philr philr  411 May  7 16:07 Aspire
+-rw-r--r--  1 philr philr   96 May  7 16:07 Aspire.pub
+-rw-------  1 philr philr  464 Apr 18 13:08 Githubkey
+-rw-r--r--  1 philr philr  102 Apr 18 13:08 Githubkey.pub
+-rw-------  1 philr philr  411 May 17 15:07 THGA_Gitlab
+-rw-r--r--  1 philr philr  100 May 17 15:07 THGA_Gitlab.pub
+-rw-r--r--  1 philr philr  328 May 17 10:37 config
+-rw-------  1 philr philr 2934 May 17 10:20 known_hosts
+-rw-------  1 philr philr 2098 May 17 10:19 known_hosts.old
+-rw-------  1 philr philr  432 May 17 10:30 user12
+-rw-r--r--  1 philr philr  114 May 17 10:30 user12.pub
+philr@3245-Laptop:~/.ssh$ vim config
+philr@3245-Laptop:~/.ssh$ ls
+Aspire  Aspire.pub  Githubkey  Githubkey.pub  THGA_Gitlab  THGA_Gitlab.pub  config  known_hosts  known_hosts.old  user12  user12.pub
+philr@3245-Laptop:~/.ssh$ cd
+philr@3245-Laptop:~$ cd Programieren
+philr@3245-Laptop:~/Programieren$ cd repos
+philr@3245-Laptop:~/Programieren/repos$ mkdir myproject-gl
+philr@3245-Laptop:~/Programieren/repos$ cd myproject-gl
+philr@3245-Laptop:~/Programieren/repos/myproject-gl$ git init
+Initialized empty Git repository in /home/philr/Programieren/repos/myproject-gl/.git/
+philr@3245-Laptop:~/Programieren/repos/myproject-gl$ git remote add gitlab gitlab.thga.de:279789/myproject-gl.git
+philr@3245-Laptop:~/Programieren/repos/myproject-gl$ vim gitlab.txt
+philr@3245-Laptop:~/Programieren/repos/myproject-gl$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        gitlab.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+philr@3245-Laptop:~/Programieren/repos/myproject-gl$ git add gitlab.txt
+philr@3245-Laptop:~/Programieren/repos/myproject-gl$ git commit -m "Gitlabtest"
+[master (root-commit) ab1b566] Gitlabtest
+ 1 file changed, 1 insertion(+)
+ create mode 100644 gitlab.txt
+philr@3245-Laptop:~/Programieren/repos/myproject-gl$ ls
+gitlab.txt
+philr@3245-Laptop:~/Programieren/repos/myproject-gl$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream gitlab master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+philr@3245-Laptop:~/Programieren/repos/myproject-gl$ git push -u gitlab master
+The authenticity of host 'gitlab.thga.de (195.37.5.155)' can't be established.
+ED25519 key fingerprint is SHA256:4+4+prKVzsU8Bw0eBjkbBm86bl9+OinZJIidEMGHpqc.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'gitlab.thga.de' (ED25519) to the list of known hosts.
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 229 bytes | 229.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To gitlab.thga.de:279789/myproject-gl.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'gitlab/master'.
+philr@3245-Laptop:~/Programieren/repos/myproject-gl$
 ```
 
 ---
