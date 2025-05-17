@@ -45,6 +45,216 @@ In this exercise you will:
 ```bash
 # Paste here the sequence of git commands you ran
 # and the relevant terminal output (e.g., branch listing, merge messages)
+philr@3245-Laptop:~/Programieren/repos$ mkdir PP5
+philr@3245-Laptop:~/Programieren/repos$ cd PP5
+philr@3245-Laptop:~/Programieren/repos/PP5$ git init
+Initialized empty Git repository in /home/philr/Programieren/repos/PP5/.git/
+philr@3245-Laptop:~/Programieren/repos/PP5$ branch feature-1
+Command 'branch' not found, but can be installed with:
+sudo apt install rheolef
+philr@3245-Laptop:~/Programieren/repos/PP5$ git branch feature-1
+fatal: not a valid object name: 'master'
+philr@3245-Laptop:~/Programieren/repos/PP5$ git checkot -b feature 1
+git: 'checkot' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+philr@3245-Laptop:~/Programieren/repos/PP5$ git checkout -b feature 1
+fatal: '1' is not a commit and a branch 'feature' cannot be created from it
+philr@3245-Laptop:~/Programieren/repos/PP5$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+philr@3245-Laptop:~/Programieren/repos/PP5$ git log
+fatal: your current branch 'master' does not have any commits yet
+philr@3245-Laptop:~/Programieren/repos/PP5$ touch sens.txt
+philr@3245-Laptop:~/Programieren/repos/PP5$ git add sens.txt
+philr@3245-Laptop:~/Programieren/repos/PP5$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   sens.txt
+
+philr@3245-Laptop:~/Programieren/repos/PP5$ git commit -m "Test"
+[master (root-commit) 7814dc9] Test
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 sens.txt
+philr@3245-Laptop:~/Programieren/repos/PP5$ git log
+commit 7814dc9139a3683e72cf8d0fa8f07e3fdbe55849 (HEAD -> master)
+Author: Filz <phil.reinartz@gmx.de>
+Date:   Sat May 17 10:45:13 2025 +0200
+
+    Test
+philr@3245-Laptop:~/Programieren/repos/PP5$ git branch feature-1
+philr@3245-Laptop:~/Programieren/repos/PP5$ git log
+commit 7814dc9139a3683e72cf8d0fa8f07e3fdbe55849 (HEAD -> master, feature-1)
+Author: Filz <phil.reinartz@gmx.de>
+Date:   Sat May 17 10:45:13 2025 +0200
+
+    Test
+philr@3245-Laptop:~/Programieren/repos/PP5$ git checkout feature-1
+Switched to branch 'feature-1'
+philr@3245-Laptop:~/Programieren/repos/PP5$ vim feature.txt
+philr@3245-Laptop:~/Programieren/repos/PP5$ ls
+feature.txt  sens.txt
+philr@3245-Laptop:~/Programieren/repos/PP5$ git status
+On branch feature-1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        feature.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+philr@3245-Laptop:~/Programieren/repos/PP5$ git add feature.txt
+philr@3245-Laptop:~/Programieren/repos/PP5$ git status
+On branch feature-1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   feature.txt
+
+philr@3245-Laptop:~/Programieren/repos/PP5$ git commit -M "feature commit"
+error: unknown switch `M'
+usage: git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+                  [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>)]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                  [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]
+                  [--] [<pathspec>...]
+
+    -q, --[no-]quiet      suppress summary after successful commit
+    -v, --[no-]verbose    show diff in commit message template
+
+Commit message options
+    -F, --[no-]file <file>
+                          read message from file
+    --[no-]author <author>
+                          override author for commit
+    --[no-]date <date>    override date for commit
+    -m, --[no-]message <message>
+                          commit message
+    -c, --[no-]reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --[no-]reuse-message <commit>
+                          reuse message from specified commit
+    --[no-]fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --[no-]squash <commit>
+                          use autosquash formatted message to squash specified commit
+    --[no-]reset-author   the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --[no-]signoff    add a Signed-off-by trailer
+    -t, --[no-]template <file>
+                          use specified template file
+    -e, --[no-]edit       force edit of commit
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    --[no-]status         include status in commit message template
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --[no-]all        commit all changed files
+    -i, --[no-]include    add specified files to index for commit
+    --[no-]interactive    interactively add files
+    -p, --[no-]patch      interactively add changes
+    -o, --[no-]only       commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --verify              opposite of --no-verify
+    --[no-]dry-run        show what would be committed
+    --[no-]short          show status concisely
+    --[no-]branch         show branch information
+    --[no-]ahead-behind   compute full ahead/behind values
+    --[no-]porcelain      machine-readable output
+    --[no-]long           show status in long format (default)
+    -z, --[no-]null       terminate entries with NUL
+    --[no-]amend          amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    --post-rewrite        opposite of --no-post-rewrite
+    -u, --[no-]untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+philr@3245-Laptop:~/Programieren/repos/PP5$ git commit -m "feature commit"
+[feature-1 b900b9d] feature commit
+ 1 file changed, 3 insertions(+)
+ create mode 100644 feature.txt
+philr@3245-Laptop:~/Programieren/repos/PP5$ git log
+commit b900b9d356d06a10aada3655412a92a1f4ae4101 (HEAD -> feature-1)
+Author: Filz <phil.reinartz@gmx.de>
+Date:   Sat May 17 10:48:57 2025 +0200
+
+    feature commit
+
+commit 7814dc9139a3683e72cf8d0fa8f07e3fdbe55849 (master)
+Author: Filz <phil.reinartz@gmx.de>
+Date:   Sat May 17 10:45:13 2025 +0200
+
+    Test
+philr@3245-Laptop:~/Programieren/repos/PP5$ git merge feature master
+merge: feature - not something we can merge
+philr@3245-Laptop:~/Programieren/repos/PP5$ git merge feature-1 master
+Already up to date.
+philr@3245-Laptop:~/Programieren/repos/PP5$ git log
+commit b900b9d356d06a10aada3655412a92a1f4ae4101 (HEAD -> feature-1)
+Author: Filz <phil.reinartz@gmx.de>
+Date:   Sat May 17 10:48:57 2025 +0200
+
+    feature commit
+
+commit 7814dc9139a3683e72cf8d0fa8f07e3fdbe55849 (master)
+Author: Filz <phil.reinartz@gmx.de>
+Date:   Sat May 17 10:45:13 2025 +0200
+
+    Test
+philr@3245-Laptop:~/Programieren/repos/PP5$ git merge master feature-1
+Already up to date.
+philr@3245-Laptop:~/Programieren/repos/PP5$ ls
+feature.txt  sens.txt
+philr@3245-Laptop:~/Programieren/repos/PP5$ git log
+commit b900b9d356d06a10aada3655412a92a1f4ae4101 (HEAD -> feature-1)
+Author: Filz <phil.reinartz@gmx.de>
+Date:   Sat May 17 10:48:57 2025 +0200
+
+    feature commit
+
+commit 7814dc9139a3683e72cf8d0fa8f07e3fdbe55849 (master)
+Author: Filz <phil.reinartz@gmx.de>
+Date:   Sat May 17 10:45:13 2025 +0200
+
+    Test
+philr@3245-Laptop:~/Programieren/repos/PP5$ git checkout master
+Switched to branch 'master'
+philr@3245-Laptop:~/Programieren/repos/PP5$ ls
+sens.txt
+philr@3245-Laptop:~/Programieren/repos/PP5$ git merge feature
+merge: feature - not something we can merge
+philr@3245-Laptop:~/Programieren/repos/PP5$ git merge feature-1
+Updating 7814dc9..b900b9d
+Fast-forward
+ feature.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 feature.txt
+philr@3245-Laptop:~/Programieren/repos/PP5$ git log
+commit b900b9d356d06a10aada3655412a92a1f4ae4101 (HEAD -> master, feature-1)
+Author: Filz <phil.reinartz@gmx.de>
+Date:   Sat May 17 10:48:57 2025 +0200
+
+    feature commit
+
+commit 7814dc9139a3683e72cf8d0fa8f07e3fdbe55849
+Author: Filz <phil.reinartz@gmx.de>
+Date:   Sat May 17 10:45:13 2025 +0200
+
+    Test
+philr@3245-Laptop:~/Programieren/repos/PP5$
 ```
 
 ---
