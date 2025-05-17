@@ -536,7 +536,8 @@ philr@3245-Laptop:~/Programieren/repos/myproject-gl$
 
 **Your PR/MR Links & Descriptions**
 
-* GitHub PR: *paste URL and a one-sentence summary*
+* GitHub PR: [*paste URL and a one-sentence summary*]https://github.com/279789/PP5/pull/1 Worked finaly, but forgot that I also have to "remote add " the og repo for my branch
+* 
 * GitLab MR: *paste URL and a one-sentence summary*
 
 ---
